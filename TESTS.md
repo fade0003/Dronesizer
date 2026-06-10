@@ -5,15 +5,18 @@ Given/When/Then list maintained per CLAUDE.md rule 8. Checked = passing in
 
 ## Key acceptance criteria (SPEC §11)
 
-- [ ] **Golden case** — Given the golden inputs (fixed 3.3 kg, A = 0.45 m²,
+- [x] **Golden case** — Given the golden inputs (fixed 3.3 kg, A = 0.45 m²,
   FM 0.65, 30 min hover, DoD·η = 0.68, e = 180 Wh/kg), When the solver runs,
-  Then it converges to mtow = 6.0 ± 0.05 kg in ≤ 30 iterations. *(phase 2)*
-- [ ] **FPV / endurance archetypes** — Given the seeded FPV archetype, When
+  Then it converges to mtow = 6.0 ± 0.05 kg in ≤ 30 iterations.
+  *(phase 2 — passing: golden.test.ts)*
+- [x] **FPV / endurance archetypes** — Given the seeded FPV archetype, When
   analyzed, Then vMax ≥ 35 m/s and pitch ≥ 30° at vMax; Given the endurance
-  quad, Then hover endurance ≥ 35 min. *(phase 2–3)*
-- [ ] **Infeasible request** — Given a 90 min endurance demand on the R-Line
+  quad, Then hover endurance ≥ 35 min.
+  *(phase 2 — passing at model level: sizing.test.ts; UI readouts phase 3)*
+- [x] **Infeasible request** — Given a 90 min endurance demand on the R-Line
   LiPo pack, When the solver runs, Then status is `diverged` with the
-  explanatory card and no console errors. *(phase 2–3)*
+  snowball explanation. *(phase 2 — passing at model level; the explanatory
+  card and no-console-errors check land with the Run view in phase 3)*
 - [ ] **DOE performance** — Given a 200-case LHS DOE, When run in the Web
   Worker, Then it completes in ≤ 10 s with the UI interactive throughout.
   *(phase 4)*
@@ -54,3 +57,25 @@ Given/When/Then list maintained per CLAUDE.md rule 8. Checked = passing in
   round-trip is byte-identical.
 - [x] Given `reset()`, When called, Then user data is dropped, the seed is
   restored, and the reset persists across reload.
+
+## Phase 2 — effects models, solver, limits (passing)
+
+- [x] Given the golden iteration map, When solved with Aitken off, Then it
+  still converges within 60 evaluations — and Aitken uses strictly fewer.
+- [x] Given a contraction (cos x) and a snowball map, When solved, Then the
+  solver converges / flags `diverged` respectively; non-finite and runaway
+  iterates also flag `diverged`.
+- [x] Given increasing speed, When forwardFlight evaluates, Then pitch and
+  cruise power increase monotonically; at V < 0.1 m/s it degenerates to
+  hover power; the eta curve interpolates with endpoint clamping.
+- [x] Given a power ceiling, When vMax is bisected, Then power at vMax sits
+  on the ceiling, and an unreachable ceiling caps vMax at 80 m/s.
+- [x] Given the registry, When listed, Then the seven fidelity-0 models at
+  1.0 match the db seed rows exactly (name@version sets equal).
+- [x] Given the heavy-lift archetype with the 1 kg payload, When sized for
+  30 min hover, Then it converges with all limits clear and T/W ≥ 1.6.
+- [x] Given operating points violating each limit (T/W, disk loading,
+  hover C-rate, tip Mach, motor rating), When checked, Then each produces
+  its specific human-readable reason.
+- [x] Given a configuration missing its battery role, When analyzed, Then
+  status is `invalid` with a "missing role" reason — never a crash.
