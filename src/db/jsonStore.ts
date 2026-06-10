@@ -31,7 +31,9 @@ export interface StorageLike {
   removeItem(key: string): void;
 }
 
-const STORAGE_KEY = 'aether-trade-studio.db.v1';
+// Bump the suffix when the seed catalog changes shape/content so existing
+// browsers re-seed instead of carrying a stale snapshot (D23).
+const STORAGE_KEY = 'aether-trade-studio.db.v2';
 
 interface Snapshot {
   components: Component[];

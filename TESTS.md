@@ -15,8 +15,9 @@ Given/When/Then list maintained per CLAUDE.md rule 8. Checked = passing in
   *(phase 2 — passing at model level: sizing.test.ts; UI readouts phase 3)*
 - [x] **Infeasible request** — Given a 90 min endurance demand on the R-Line
   LiPo pack, When the solver runs, Then status is `diverged` with the
-  snowball explanation. *(phase 2 — passing at model level; the explanatory
-  card and no-console-errors check land with the Run view in phase 3)*
+  explanatory card and no console errors. *(phase 3 — verified in the
+  browser: "Long endurance — 90 min" on the FPV archetype renders the
+  "This design does not close" card; console clean)*
 - [ ] **DOE performance** — Given a 200-case LHS DOE, When run in the Web
   Worker, Then it completes in ≤ 10 s with the UI interactive throughout.
   *(phase 4)*
@@ -79,3 +80,20 @@ Given/When/Then list maintained per CLAUDE.md rule 8. Checked = passing in
   its specific human-readable reason.
 - [x] Given a configuration missing its battery role, When analyzed, Then
   status is `invalid` with a "missing role" reason — never a crash.
+
+## Phase 3 — Catalog, Builder, Run wired end-to-end (verified in browser)
+
+- [x] Given the Catalog view, When a class chip or filter is applied, Then
+  the table narrows accordingly and every row shows mass and cost; Add
+  inserts the component into the active configuration.
+- [x] Given the Builder view, When a configuration is active, Then its
+  instances render as React Flow nodes auto-wired by role (battery → esc →
+  motor → prop chains), with a live dry-mass/BOM/loaded ticker.
+- [x] Given the Run view, When Run executes the Endurance Quad on the 40-min
+  hover profile, Then status `converged` shows with Readouts (count-up,
+  provenance popover), convergence sparkline, and iteration table; a
+  Study/Case/Result pedigree row set is written through the repository.
+- [x] Given the 90-min profile on the FPV archetype, When run, Then the
+  diverged explainer card renders with no console errors.
+- [x] Given canonical input hashing, When key order differs, Then hashes
+  match; different values produce different hashes (hash.test.ts).

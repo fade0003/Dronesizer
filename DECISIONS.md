@@ -83,3 +83,27 @@ with its architecture rules is chosen and recorded here.
 - **D22 — Solver counts iterations as g-evaluations** (maxIter 60, golden
   ≤ 30); Aitken-accelerated candidates are clamped to [0, 10⁴] kg and the
   divergence monitor counts consecutive residual-growth evaluations.
+
+## Phase 3
+
+- **D23 — localStorage key carries a seed version** (`…db.v2`): bumped when
+  the seed catalog changes so returning browsers re-seed instead of keeping
+  a stale snapshot. The visible "Reset demo data" control (SPEC §14) also
+  exists in the left rail.
+- **D24 — React Flow runs uncontrolled** (`defaultNodes`/`defaultEdges`)
+  with a remount key derived from the configuration's instance set. The
+  Builder graph is fully derived data; controlled mode required echoing RF's
+  internal dimension changes for no benefit. (Found while debugging: in
+  controlled mode without onNodesChange applied, nodes never measure and
+  edges silently don't render.)
+- **D25 — Catalog grew domain-relevant entries** (sub-250-class motors/
+  props/packs, 3D-printable frames, Insta360 X5 payload) — still
+  representative values, same sourceNote discipline, count now 33 ≥ 18.
+- **D26 — Point runs execute on the main thread** and still write
+  Study/CaseRow/ResultRow pedigree through the repository; the Web Worker
+  requirement (SPEC §8) applies to DOE studies and lands in phase 4.
+- **D27 — Mission profiles are hardcoded** (4 profiles incl. a deliberately
+  infeasible 90-min one) per the P0 allowance; the segment editor is P1.
+- **D28 — Frame `maxPropIn` is not yet enforced** against the selected prop
+  in the Builder (no SPEC §7 limit covers it); flagged for the phase 6
+  polish pass as a UI-level warning.

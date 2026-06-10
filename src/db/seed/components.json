@@ -85,6 +85,40 @@
     "sourceNote": "representative — verify against mfr datasheet before procurement"
   },
   {
+    "id": "00000000-0000-4000-8000-000000000006",
+    "cls": "motor",
+    "mfr": "Generic",
+    "model": "1404 KV2750",
+    "massKg": 0.009,
+    "unitCostUsd": 12,
+    "params": {
+      "kv": 2750,
+      "rmOhm": 0.18,
+      "i0A": 0.4,
+      "maxPowerW": 220,
+      "maxThrustKgf": 0.45,
+      "statorDiamMm": 14
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000007",
+    "cls": "motor",
+    "mfr": "Generic",
+    "model": "2004 KV1700",
+    "massKg": 0.0145,
+    "unitCostUsd": 16,
+    "params": {
+      "kv": 1700,
+      "rmOhm": 0.11,
+      "i0A": 0.6,
+      "maxPowerW": 320,
+      "maxThrustKgf": 0.75,
+      "statorDiamMm": 20
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
     "id": "00000000-0000-4000-8000-000000000011",
     "cls": "prop",
     "mfr": "APC",
@@ -169,6 +203,48 @@
     "sourceNote": "representative — verify against mfr datasheet before procurement"
   },
   {
+    "id": "00000000-0000-4000-8000-000000000015",
+    "cls": "prop",
+    "mfr": "HQProp",
+    "model": "3.5x2.8x3",
+    "massKg": 0.002,
+    "unitCostUsd": 2,
+    "params": {
+      "diamIn": 3.5,
+      "pitchIn": 2.8,
+      "kT0": 0.12,
+      "etaCruisePeak": 0.56,
+      "etaCurve": [
+        [0.3, 0.4],
+        [0.55, 0.54],
+        [0.8, 0.56],
+        [1.0, 0.46]
+      ]
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000016",
+    "cls": "prop",
+    "mfr": "Gemfan",
+    "model": "4024 4-inch",
+    "massKg": 0.003,
+    "unitCostUsd": 2,
+    "params": {
+      "diamIn": 4.0,
+      "pitchIn": 2.4,
+      "kT0": 0.12,
+      "etaCruisePeak": 0.58,
+      "etaCurve": [
+        [0.3, 0.41],
+        [0.55, 0.55],
+        [0.8, 0.58],
+        [1.0, 0.48]
+      ]
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
     "id": "00000000-0000-4000-8000-000000000021",
     "cls": "battery",
     "mfr": "Tattu",
@@ -213,6 +289,38 @@
       "specificEnergyWhKg": 230,
       "maxC": 4,
       "intResistMohm": 40
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000024",
+    "cls": "battery",
+    "mfr": "Tattu",
+    "model": "R-Line 4S 850 mAh",
+    "massKg": 0.098,
+    "unitCostUsd": 25,
+    "params": {
+      "cells": 4,
+      "capacityAh": 0.85,
+      "specificEnergyWhKg": 128,
+      "maxC": 95,
+      "intResistMohm": 25
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000025",
+    "cls": "battery",
+    "mfr": "Generic",
+    "model": "4S 1500 mAh LiPo",
+    "massKg": 0.16,
+    "unitCostUsd": 28,
+    "params": {
+      "cells": 4,
+      "capacityAh": 1.5,
+      "specificEnergyWhKg": 139,
+      "maxC": 60,
+      "intResistMohm": 22
     },
     "sourceNote": "representative — verify against mfr datasheet before procurement"
   },
@@ -262,6 +370,36 @@
     "sourceNote": "representative — verify against mfr datasheet before procurement"
   },
   {
+    "id": "00000000-0000-4000-8000-000000000034",
+    "cls": "frame",
+    "mfr": "Palingen (3D-printed)",
+    "model": "PETG 3.5-inch frame",
+    "massKg": 0.048,
+    "unitCostUsd": 8,
+    "params": {
+      "cdaM2": 0.0065,
+      "cdaTiltFactor": 0.5,
+      "maxPropIn": 3.5,
+      "arms": 4
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000035",
+    "cls": "frame",
+    "mfr": "Palingen (3D-printed)",
+    "model": "PA-CF 5-inch frame",
+    "massKg": 0.115,
+    "unitCostUsd": 14,
+    "params": {
+      "cdaM2": 0.0095,
+      "cdaTiltFactor": 0.5,
+      "maxPropIn": 5.1,
+      "arms": 4
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
     "id": "00000000-0000-4000-8000-000000000041",
     "cls": "fc",
     "mfr": "Generic",
@@ -282,6 +420,18 @@
     "unitCostUsd": 85,
     "params": {
       "pDrawW": 9
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000043",
+    "cls": "fc",
+    "mfr": "Generic",
+    "model": "Whoop-class AIO (FC + 4-in-1 ESC)",
+    "massKg": 0.008,
+    "unitCostUsd": 42,
+    "params": {
+      "pDrawW": 4
     },
     "sourceNote": "representative — verify against mfr datasheet before procurement"
   },
@@ -366,6 +516,18 @@
     "unitCostUsd": 1200,
     "params": {
       "pDrawW": 15
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000074",
+    "cls": "payload",
+    "mfr": "Insta360",
+    "model": "X5 360 camera",
+    "massKg": 0.2,
+    "unitCostUsd": 550,
+    "params": {
+      "pDrawW": 0
     },
     "sourceNote": "representative — verify against mfr datasheet before procurement"
   }

@@ -18,3 +18,15 @@ body {
   color: var(--ink);
   font-family: var(--font-body);
 }
+
+/* The single allowed view transition (SPEC §10). */
+.view-fade {
+  animation: view-fade 300ms ease;
+}
+@keyframes view-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .view-fade { animation: none; }
+}
