@@ -2,3 +2,5 @@ node_modules/
 dist/
 *.local
 .DS_Store
+dist-single/
+aether-trade-studio.html
