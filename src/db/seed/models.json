@@ -1,0 +1,87 @@
+[
+  {
+    "name": "massRollup",
+    "version": "1.0",
+    "discipline": "mass",
+    "fidelity": 0,
+    "inputs": [{ "name": "mBattKg", "units": "kg", "bounds": [0, 20] }],
+    "outputs": [{ "name": "mtowKg", "units": "kg" }],
+    "validity": { "mtowKg": [0.05, 50] }
+  },
+  {
+    "name": "hoverPower",
+    "version": "1.0",
+    "discipline": "propulsion",
+    "fidelity": 0,
+    "inputs": [
+      { "name": "mtowKg", "units": "kg" },
+      { "name": "diskAreaM2", "units": "m^2" }
+    ],
+    "outputs": [{ "name": "pHoverW", "units": "W" }],
+    "validity": { "diskLoadingKgM2": [0.5, 40] }
+  },
+  {
+    "name": "forwardFlight",
+    "version": "1.0",
+    "discipline": "aerodynamics",
+    "fidelity": 0,
+    "inputs": [
+      { "name": "mtowKg", "units": "kg" },
+      { "name": "speedMs", "units": "m/s", "bounds": [0, 80] }
+    ],
+    "outputs": [
+      { "name": "pCruiseW", "units": "W" },
+      { "name": "pitchDeg", "units": "deg" },
+      { "name": "vMaxMs", "units": "m/s" }
+    ],
+    "validity": { "speedMs": [0, 80], "pitchDeg": [0, 60] }
+  },
+  {
+    "name": "batteryEnergy",
+    "version": "1.0",
+    "discipline": "energy",
+    "fidelity": 0,
+    "inputs": [{ "name": "eMissionWh", "units": "Wh" }],
+    "outputs": [{ "name": "mBattKg", "units": "kg" }],
+    "validity": { "mBattKg": [0.01, 20] }
+  },
+  {
+    "name": "missionEnergy",
+    "version": "1.0",
+    "discipline": "mission",
+    "fidelity": 0,
+    "inputs": [
+      { "name": "pHoverW", "units": "W" },
+      { "name": "pCruiseW", "units": "W" }
+    ],
+    "outputs": [
+      { "name": "eMissionWh", "units": "Wh" },
+      { "name": "enduranceMin", "units": "min" }
+    ],
+    "validity": { "enduranceMin": [0, 300] }
+  },
+  {
+    "name": "costRollup",
+    "version": "1.0",
+    "discipline": "cost",
+    "fidelity": 0,
+    "inputs": [],
+    "outputs": [{ "name": "unitCostUsd", "units": "USD" }],
+    "validity": {}
+  },
+  {
+    "name": "limits",
+    "version": "1.0",
+    "discipline": "constraints",
+    "fidelity": 0,
+    "inputs": [
+      { "name": "mtowKg", "units": "kg" },
+      { "name": "pHoverW", "units": "W" }
+    ],
+    "outputs": [
+      { "name": "thrustToWeight", "units": "-" },
+      { "name": "tipMach", "units": "-" }
+    ],
+    "validity": { "thrustToWeight": [1.6, 10], "tipMach": [0, 0.6] }
+  }
+]

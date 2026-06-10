@@ -1,0 +1,25 @@
+/* Design tokens — SPEC §10. Flight-test ground station, daylight-readable. */
+:root {
+  /* Surfaces */
+  --paper: #F2F4F6;   /* cool gray field */
+  --panel: #FFFFFF;
+  --ink: #16212B;     /* deep blue-black */
+  --line: #C7CFD6;
+
+  /* Accent — rescue orange: Pareto front, active constraints, run button, nothing else */
+  --signal: #E8590C;
+
+  /* Data — instrument teal: plots, sparklines, connections */
+  --trace: #0B7285;
+
+  /* States */
+  --converged: #2B8A3E;
+  --diverged: #C92A2A;
+  --invalid: #E8590C; /* outline only */
+
+  /* Type. Fonts are system-stacked in phase 1; self-hosted files land in
+     phase 6 (SPEC §13: no CDN, no network at runtime). */
+  --font-display: 'Saira SemiCondensed', 'Arial Narrow', 'Helvetica Neue', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', 'Consolas', monospace;
+}

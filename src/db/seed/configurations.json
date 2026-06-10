@@ -1,0 +1,52 @@
+[
+  {
+    "id": "10000000-0000-4000-8000-000000000001",
+    "name": "Endurance Quad 650",
+    "parentId": null,
+    "status": "draft",
+    "archetype": "endurance_quad",
+    "instances": [
+      { "componentId": "00000000-0000-4000-8000-000000000002", "role": "motor", "count": 4 },
+      { "componentId": "00000000-0000-4000-8000-000000000012", "role": "prop", "count": 4 },
+      { "componentId": "00000000-0000-4000-8000-000000000062", "role": "esc", "count": 4 },
+      { "componentId": "00000000-0000-4000-8000-000000000023", "role": "battery", "count": 1 },
+      { "componentId": "00000000-0000-4000-8000-000000000031", "role": "frame", "count": 1 },
+      { "componentId": "00000000-0000-4000-8000-000000000041", "role": "fc", "count": 1 },
+      { "componentId": "00000000-0000-4000-8000-000000000071", "role": "payload", "count": 1 }
+    ],
+    "cuiMarking": null
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000002",
+    "name": "FPV High-Speed 5-inch",
+    "parentId": null,
+    "status": "draft",
+    "archetype": "fpv_highspeed",
+    "instances": [
+      { "componentId": "00000000-0000-4000-8000-000000000004", "role": "motor", "count": 4 },
+      { "componentId": "00000000-0000-4000-8000-000000000013", "role": "prop", "count": 4 },
+      { "componentId": "00000000-0000-4000-8000-000000000061", "role": "esc", "count": 1 },
+      { "componentId": "00000000-0000-4000-8000-000000000022", "role": "battery", "count": 1 },
+      { "componentId": "00000000-0000-4000-8000-000000000033", "role": "frame", "count": 1 },
+      { "componentId": "00000000-0000-4000-8000-000000000042", "role": "fc", "count": 1 }
+    ],
+    "cuiMarking": null
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000003",
+    "name": "Heavy Lift",
+    "parentId": null,
+    "status": "draft",
+    "archetype": "heavy_lift",
+    "instances": [
+      { "componentId": "00000000-0000-4000-8000-000000000003", "role": "motor", "count": 4 },
+      { "componentId": "00000000-0000-4000-8000-000000000012", "role": "prop", "count": 4 },
+      { "componentId": "00000000-0000-4000-8000-000000000062", "role": "esc", "count": 4 },
+      { "componentId": "00000000-0000-4000-8000-000000000021", "role": "battery", "count": 1 },
+      { "componentId": "00000000-0000-4000-8000-000000000031", "role": "frame", "count": 1 },
+      { "componentId": "00000000-0000-4000-8000-000000000041", "role": "fc", "count": 1 },
+      { "componentId": "00000000-0000-4000-8000-000000000073", "role": "payload", "count": 1 }
+    ],
+    "cuiMarking": null
+  }
+]

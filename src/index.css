@@ -1,0 +1,20 @@
+@import 'tailwindcss';
+@import './ui/tokens.css';
+
+@theme {
+  --color-paper: #F2F4F6;
+  --color-panel: #FFFFFF;
+  --color-ink: #16212B;
+  --color-line: #C7CFD6;
+  --color-signal: #E8590C;
+  --color-trace: #0B7285;
+  --color-converged: #2B8A3E;
+  --color-diverged: #C92A2A;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+}

@@ -1,0 +1,372 @@
+[
+  {
+    "id": "00000000-0000-4000-8000-000000000001",
+    "cls": "motor",
+    "mfr": "T-Motor",
+    "model": "MN3110 KV780",
+    "massKg": 0.099,
+    "unitCostUsd": 75,
+    "params": {
+      "kv": 780,
+      "rmOhm": 0.108,
+      "i0A": 0.5,
+      "maxPowerW": 350,
+      "maxThrustKgf": 1.5,
+      "statorDiamMm": 31
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000002",
+    "cls": "motor",
+    "mfr": "T-Motor",
+    "model": "MN501-S KV240",
+    "massKg": 0.184,
+    "unitCostUsd": 130,
+    "params": {
+      "kv": 240,
+      "rmOhm": 0.06,
+      "i0A": 0.6,
+      "maxPowerW": 850,
+      "maxThrustKgf": 4.2,
+      "statorDiamMm": 50
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000003",
+    "cls": "motor",
+    "mfr": "T-Motor",
+    "model": "U8 II KV100",
+    "massKg": 0.24,
+    "unitCostUsd": 230,
+    "params": {
+      "kv": 100,
+      "rmOhm": 0.12,
+      "i0A": 0.7,
+      "maxPowerW": 1300,
+      "maxThrustKgf": 5.5,
+      "statorDiamMm": 80
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000004",
+    "cls": "motor",
+    "mfr": "iFlight",
+    "model": "XING2 2207 KV1855",
+    "massKg": 0.032,
+    "unitCostUsd": 27,
+    "params": {
+      "kv": 1855,
+      "rmOhm": 0.045,
+      "i0A": 1.2,
+      "maxPowerW": 750,
+      "maxThrustKgf": 1.9,
+      "statorDiamMm": 22
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000005",
+    "cls": "motor",
+    "mfr": "EMAX",
+    "model": "ECO II 2306 KV1900",
+    "massKg": 0.031,
+    "unitCostUsd": 14,
+    "params": {
+      "kv": 1900,
+      "rmOhm": 0.06,
+      "i0A": 1.0,
+      "maxPowerW": 650,
+      "maxThrustKgf": 1.7,
+      "statorDiamMm": 23
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000011",
+    "cls": "prop",
+    "mfr": "APC",
+    "model": "12x4.5MR",
+    "massKg": 0.013,
+    "unitCostUsd": 6,
+    "params": {
+      "diamIn": 12,
+      "pitchIn": 4.5,
+      "kT0": 0.11,
+      "etaCruisePeak": 0.65,
+      "etaCurve": [
+        [0.2, 0.45],
+        [0.4, 0.62],
+        [0.6, 0.65],
+        [0.8, 0.5]
+      ]
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000012",
+    "cls": "prop",
+    "mfr": "T-Motor",
+    "model": "CF 18x6.1",
+    "massKg": 0.028,
+    "unitCostUsd": 90,
+    "params": {
+      "diamIn": 18,
+      "pitchIn": 6.1,
+      "kT0": 0.12,
+      "etaCruisePeak": 0.72,
+      "etaCurve": [
+        [0.2, 0.5],
+        [0.4, 0.68],
+        [0.6, 0.72],
+        [0.8, 0.6]
+      ]
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000013",
+    "cls": "prop",
+    "mfr": "HQProp",
+    "model": "5.1x4.6x3",
+    "massKg": 0.004,
+    "unitCostUsd": 3,
+    "params": {
+      "diamIn": 5.1,
+      "pitchIn": 4.6,
+      "kT0": 0.13,
+      "etaCruisePeak": 0.6,
+      "etaCurve": [
+        [0.3, 0.42],
+        [0.6, 0.58],
+        [0.9, 0.6],
+        [1.1, 0.5]
+      ]
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000014",
+    "cls": "prop",
+    "mfr": "APC",
+    "model": "10x4.5MR",
+    "massKg": 0.011,
+    "unitCostUsd": 5,
+    "params": {
+      "diamIn": 10,
+      "pitchIn": 4.5,
+      "kT0": 0.11,
+      "etaCruisePeak": 0.63,
+      "etaCurve": [
+        [0.2, 0.44],
+        [0.4, 0.6],
+        [0.6, 0.63],
+        [0.8, 0.48]
+      ]
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000021",
+    "cls": "battery",
+    "mfr": "Tattu",
+    "model": "6S 22000 mAh LiPo",
+    "massKg": 2.38,
+    "unitCostUsd": 250,
+    "params": {
+      "cells": 6,
+      "capacityAh": 22,
+      "specificEnergyWhKg": 205,
+      "maxC": 25,
+      "intResistMohm": 6
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000022",
+    "cls": "battery",
+    "mfr": "Tattu",
+    "model": "R-Line 6S 1400 mAh",
+    "massKg": 0.23,
+    "unitCostUsd": 35,
+    "params": {
+      "cells": 6,
+      "capacityAh": 1.4,
+      "specificEnergyWhKg": 135,
+      "maxC": 120,
+      "intResistMohm": 18
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000023",
+    "cls": "battery",
+    "mfr": "Generic",
+    "model": "Li-ion 6S2P 21700 pack",
+    "massKg": 0.56,
+    "unitCostUsd": 95,
+    "params": {
+      "cells": 6,
+      "capacityAh": 6.0,
+      "specificEnergyWhKg": 230,
+      "maxC": 4,
+      "intResistMohm": 40
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000031",
+    "cls": "frame",
+    "mfr": "Generic",
+    "model": "650-class CF quad frame",
+    "massKg": 0.48,
+    "unitCostUsd": 180,
+    "params": {
+      "cdaM2": 0.045,
+      "cdaTiltFactor": 0.6,
+      "maxPropIn": 18,
+      "arms": 4
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000032",
+    "cls": "frame",
+    "mfr": "Generic",
+    "model": "7-inch FPV freestyle frame",
+    "massKg": 0.15,
+    "unitCostUsd": 60,
+    "params": {
+      "cdaM2": 0.012,
+      "cdaTiltFactor": 0.5,
+      "maxPropIn": 7,
+      "arms": 4
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000033",
+    "cls": "frame",
+    "mfr": "Generic",
+    "model": "5-inch race frame",
+    "massKg": 0.095,
+    "unitCostUsd": 45,
+    "params": {
+      "cdaM2": 0.008,
+      "cdaTiltFactor": 0.5,
+      "maxPropIn": 5.1,
+      "arms": 4
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000041",
+    "cls": "fc",
+    "mfr": "Generic",
+    "model": "Pixhawk-class flight controller",
+    "massKg": 0.06,
+    "unitCostUsd": 200,
+    "params": {
+      "pDrawW": 5
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000042",
+    "cls": "fc",
+    "mfr": "Generic",
+    "model": "FPV AIO stack (FC + VTX)",
+    "massKg": 0.035,
+    "unitCostUsd": 85,
+    "params": {
+      "pDrawW": 9
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000051",
+    "cls": "vtx",
+    "mfr": "Generic",
+    "model": "5.8 GHz 1 W video transmitter",
+    "massKg": 0.012,
+    "unitCostUsd": 30,
+    "params": {
+      "pDrawW": 8
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000061",
+    "cls": "esc",
+    "mfr": "Generic",
+    "model": "4-in-1 60A FPV ESC",
+    "massKg": 0.018,
+    "unitCostUsd": 60,
+    "params": {
+      "maxCurrentA": 60
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000062",
+    "cls": "esc",
+    "mfr": "T-Motor",
+    "model": "Alpha-class 40A ESC",
+    "massKg": 0.03,
+    "unitCostUsd": 60,
+    "params": {
+      "maxCurrentA": 40
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000063",
+    "cls": "esc",
+    "mfr": "Generic",
+    "model": "4-in-1 45A mid-class ESC",
+    "massKg": 0.015,
+    "unitCostUsd": 45,
+    "params": {
+      "maxCurrentA": 45
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000071",
+    "cls": "payload",
+    "mfr": "Generic",
+    "model": "None",
+    "massKg": 0,
+    "unitCostUsd": 0,
+    "params": {
+      "pDrawW": 0
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000072",
+    "cls": "payload",
+    "mfr": "Generic",
+    "model": "Camera gimbal 250 g",
+    "massKg": 0.25,
+    "unitCostUsd": 400,
+    "params": {
+      "pDrawW": 6
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000073",
+    "cls": "payload",
+    "mfr": "Generic",
+    "model": "Sensor package 1.0 kg",
+    "massKg": 1.0,
+    "unitCostUsd": 1200,
+    "params": {
+      "pDrawW": 15
+    },
+    "sourceNote": "representative — verify against mfr datasheet before procurement"
+  }
+]
