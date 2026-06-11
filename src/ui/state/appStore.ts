@@ -14,7 +14,7 @@ export const VIEW_ORDER: { id: ViewId; label: string; ready: boolean }[] = [
   { id: 'builder', label: 'Builder', ready: true },
   { id: 'mission', label: 'Mission', ready: true },
   { id: 'run', label: 'Run', ready: true },
-  { id: 'tradespace', label: 'Trade space', ready: false },
+  { id: 'tradespace', label: 'Trade space', ready: true },
   { id: 'n2', label: 'N2', ready: false },
   { id: 'sysml', label: 'SysML', ready: false },
 ];

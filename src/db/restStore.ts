@@ -64,6 +64,11 @@ export class RestStore implements Db {
     get: async () => notImplemented(),
   };
 
+  async batch<T>(fn: () => Promise<T>): Promise<T> {
+    // REST persists per request; batching is a client-side no-op.
+    return fn();
+  }
+
   async exportJson(): Promise<string> {
     return notImplemented();
   }

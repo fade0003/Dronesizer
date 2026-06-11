@@ -75,6 +75,11 @@ export interface Db {
   studies: StudyRepo;
   results: ResultRepo;
   models: ModelRepo;
+  /**
+   * Group many writes into one persistence flush (e.g. streaming DOE case
+   * rows). Semantically a no-op for backends with per-request persistence.
+   */
+  batch<T>(fn: () => Promise<T>): Promise<T>;
   /** Serialize the whole store for download (.json export). */
   exportJson(): Promise<string>;
   /** Replace store contents from a previously exported snapshot. */

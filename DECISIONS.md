@@ -107,3 +107,30 @@ with its architecture rules is chosen and recorded here.
 - **D28 — Frame `maxPropIn` is not yet enforced** against the selected prop
   in the Builder (no SPEC §7 limit covers it); flagged for the phase 6
   polish pass as a UI-level warning.
+
+## Phase 4
+
+- **D29 — DOE variables sweep mission and payload, not component swaps**:
+  hover duration, cruise duration, cruise speed, payload mass (continuous,
+  per SPEC §8's inputVector model). Discrete component sweeps are a natural
+  later extension via configuration lineage.
+- **D30 — Plotly is `plotly.js-basic-dist-min`, lazy-loaded**: the basic
+  bundle covers the scatter/lasso P0 needs at a third of full Plotly; it
+  loads as a code-split chunk so the initial bundle stays ~139 kB gz
+  (SPEC §14 bundle watch). Parallel coordinates (P1) will need the full
+  dist or a hand-rolled strip — decide in phase 6. The single-file build
+  inlines the chunk (1.6 MB total, self-contained).
+- **D31 — Seeded LHS (mulberry32)**: studies are reproducible, which also
+  makes the §8 dedup cache visibly effective — re-running an identical
+  study reports "n from cache" and writes no new ResultRows.
+- **D32 — `Db.batch()` added to the repository interface**: suspends
+  jsonStore persistence during streamed case writes (one localStorage
+  flush per batch instead of one per row). RestStore implements it as a
+  pass-through — REST persists per request — so the swap stays 1:1.
+- **D33 — Dedup happens before compute**: the store hashes all vectors,
+  reuses prior ResultRows for hits (copying case status), and sends only
+  misses to the worker — the production pedigree pattern, not a
+  warm-cache-after-the-fact imitation.
+- **D34 — The worker is inlined** (`?worker&inline`) so the single-file
+  portable build keeps working; at 200–1000 cases the base64 worker cost
+  is negligible against Plotly.

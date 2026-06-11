@@ -126,8 +126,21 @@ export class JsonStore implements Db {
     };
   }
 
+  private persistSuspended = false;
+
   private persist(): void {
+    if (this.persistSuspended) return;
     this.storage?.setItem(STORAGE_KEY, JSON.stringify(this.snapshot()));
+  }
+
+  async batch<T>(fn: () => Promise<T>): Promise<T> {
+    this.persistSuspended = true;
+    try {
+      return await fn();
+    } finally {
+      this.persistSuspended = false;
+      this.persist();
+    }
   }
 
   async exportJson(): Promise<string> {

@@ -9,6 +9,7 @@ import { CatalogView } from './ui/views/CatalogView';
 import { BuilderView } from './ui/views/BuilderView';
 import { MissionView } from './ui/views/MissionView';
 import { RunView } from './ui/views/RunView';
+import { TradeSpaceView } from './ui/views/TradeSpaceView';
 
 function Placeholder({ phase }: { phase: string }) {
   return (
@@ -23,7 +24,7 @@ const VIEWS: Record<ViewId, () => JSX.Element> = {
   builder: BuilderView,
   mission: MissionView,
   run: RunView,
-  tradespace: () => <Placeholder phase="phase 4 (DOE, Pareto, trade space)" />,
+  tradespace: TradeSpaceView,
   n2: () => <Placeholder phase="phase 6 (N2 connectivity matrix)" />,
   sysml: () => <Placeholder phase="phase 5 (SysML v2 mini-modeler)" />,
 };

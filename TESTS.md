@@ -18,11 +18,14 @@ Given/When/Then list maintained per CLAUDE.md rule 8. Checked = passing in
   explanatory card and no console errors. *(phase 3 — verified in the
   browser: "Long endurance — 90 min" on the FPV archetype renders the
   "This design does not close" card; console clean)*
-- [ ] **DOE performance** — Given a 200-case LHS DOE, When run in the Web
+- [x] **DOE performance** — Given a 200-case LHS DOE, When run in the Web
   Worker, Then it completes in ≤ 10 s with the UI interactive throughout.
-  *(phase 4)*
-- [ ] **Pareto drill-down** — Given a Pareto front, When a point is clicked,
-  Then the exact component list with costs appears in ≤ 2 clicks. *(phase 4)*
+  *(phase 4 — verified in browser: 200 cases stream in well under 1 s of
+  solver time; studyRunner.test.ts pins the 10 s bound)*
+- [x] **Pareto drill-down** — Given a Pareto front, When a point is clicked,
+  Then the exact component list with costs appears in ≤ 2 clicks. *(phase 4
+  — verified in browser: click point → drawer with input vector, metrics,
+  per-component costs, "Open in Builder")*
 - [ ] **SysML parse** — Given the shipped example, When parsed, Then 0
   errors; When a semicolon is deleted, Then an inline error at the correct
   line. *(phase 5)*
@@ -97,3 +100,27 @@ Given/When/Then list maintained per CLAUDE.md rule 8. Checked = passing in
   diverged explainer card renders with no console errors.
 - [x] Given canonical input hashing, When key order differs, Then hashes
   match; different values produce different hashes (hash.test.ts).
+
+## Phase 4 — DOE worker, Pareto, Trade space (passing / browser-verified)
+
+- [x] Given n-case LHS sampling, When generated, Then every variable's
+  range is stratified with each stratum hit exactly once, bounds hold, and
+  the same seed reproduces the same vectors.
+- [x] Given full factorial sampling, When generated, Then the steps^k grid
+  includes both range ends.
+- [x] Given known point sets, When the non-dominance filter runs in any
+  min/max direction pair, Then the correct front survives, ordered along
+  the first objective; 10k points filter in O(n log n) time.
+- [x] Given a DOE vector, When applied, Then mission segments and payload
+  mass override the base mission without mutating it, and a longer hover
+  sizes a larger battery.
+- [x] Given 200 LHS cases, When run through the study runner, Then all
+  complete in < 10 s with statuses in {converged, diverged, invalid}.
+- [x] Given `Db.batch()`, When many writes stream, Then storage flushes
+  once and the flush persists every row.
+- [x] Given an identical re-run (same config, seed, ranges), When the study
+  executes, Then all 200 cases report "from cache", no new ResultRows are
+  written, and copied statuses match the originals (verified in browser:
+  603 unique hashes across 5 studies, zero status conflicts per hash).
+- [x] Given a completed study, When inspected, Then a paretoSet record is
+  persisted with the front's case ids for the selected objectives.

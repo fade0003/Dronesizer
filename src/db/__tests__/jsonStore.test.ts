@@ -71,6 +71,30 @@ describe('jsonStore persistence and import/export', () => {
     expect((await target.components.list()).length).toBeGreaterThanOrEqual(18);
   });
 
+  it('batch() suspends persistence until the batch completes', async () => {
+    const storage = new FakeStorage();
+    const db = createDb({ storage });
+    let writes = 0;
+    const originalSet = storage.setItem.bind(storage);
+    storage.setItem = (k, v) => {
+      writes++;
+      originalSet(k, v);
+    };
+    await db.batch(async () => {
+      await db.configurations.create(EXTRA_CONFIG);
+      await db.configurations.create({
+        ...EXTRA_CONFIG,
+        id: '20000000-0000-4000-8000-000000000098',
+        name: 'Second',
+      });
+    });
+    expect(writes).toBe(1); // one flush for the whole batch
+    expect(await db.configurations.list()).toHaveLength(5);
+    // And the flush actually persisted both rows.
+    const reloaded = createDb({ storage });
+    expect(await reloaded.configurations.list()).toHaveLength(5);
+  });
+
   it('reset() drops user data and restores the seed', async () => {
     const storage = new FakeStorage();
     const db = createDb({ storage });
