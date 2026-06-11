@@ -2,7 +2,7 @@
  * App shell — left-rail navigation per SPEC §10, 300 ms crossfade on view
  * change (the only motion besides Readout count-ups), reduced-motion aware.
  */
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { useAppStore, VIEW_ORDER, type ViewId } from './ui/state/appStore';
 import { useConfigStore } from './ui/state/configStore';
 import { CatalogView } from './ui/views/CatalogView';
@@ -10,6 +10,11 @@ import { BuilderView } from './ui/views/BuilderView';
 import { MissionView } from './ui/views/MissionView';
 import { RunView } from './ui/views/RunView';
 import { TradeSpaceView } from './ui/views/TradeSpaceView';
+
+// CodeMirror + the generated parser ride in their own chunk.
+const SysmlView = lazy(() =>
+  import('./ui/views/SysmlView').then((m) => ({ default: m.SysmlView })),
+);
 
 function Placeholder({ phase }: { phase: string }) {
   return (
@@ -26,7 +31,11 @@ const VIEWS: Record<ViewId, () => JSX.Element> = {
   run: RunView,
   tradespace: TradeSpaceView,
   n2: () => <Placeholder phase="phase 6 (N2 connectivity matrix)" />,
-  sysml: () => <Placeholder phase="phase 5 (SysML v2 mini-modeler)" />,
+  sysml: () => (
+    <Suspense fallback={<p className="text-sm opacity-60">Loading editor…</p>}>
+      <SysmlView />
+    </Suspense>
+  ),
 };
 
 export default function App() {

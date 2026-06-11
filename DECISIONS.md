@@ -134,3 +134,28 @@ with its architecture rules is chosen and recorded here.
 - **D34 — The worker is inlined** (`?worker&inline`) so the single-file
   portable build keeps working; at 200–1000 cases the base64 worker cost
   is negligible against Plotly.
+
+## Phase 5
+
+- **D35 — The Peggy parser is generated at dev time and committed**
+  (`src/sysml/parser.js` + hand-written `parser.d.ts`); regenerate with
+  `npx peggy --format es -o src/sysml/parser.js src/sysml/grammar.pegjs`
+  when the grammar changes. Keeps peggy out of the runtime bundle.
+- **D36 — SysML archetype defaults to `endurance_quad`**: the subset has no
+  archetype construct; the field is required by the schema, so toConfig
+  records a default (visible/editable once the config is applied).
+- **D37 — fromConfig emits `// @catalog:` overrides on every usage**, which
+  is what makes the round-trip exact (instance-set deep-equality) instead
+  of merely attribute-approximate; matching tolerances (kv ±5 %, mass
+  ±10 %, others ±10 %) remain the path for hand-written text.
+- **D38 — `connect` statements parse and display but do not map onto the
+  Configuration** (the schema has no connections field; Builder auto-wires
+  by role). Recorded as a visible subset limitation.
+- **D39 — Ad-hoc components from unmatched parts are persisted only on
+  "Apply to Builder"** (inside one batch with the configuration), so
+  parsing alone never mutates the catalog.
+- **D40 — SysML view (CodeMirror + parser) is lazy-loaded** like Plotly;
+  the initial bundle stays ≈139 kB gz (SysML chunk ≈111 kB gz).
+- **D41 — Builder canvas gets `minWidth: 320` + row wrapping** below the
+  1024 px floor: fixed-width palette/instance asides previously collapsed
+  the React Flow canvas to zero width on narrow viewports.

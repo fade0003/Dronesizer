@@ -16,7 +16,7 @@ export const VIEW_ORDER: { id: ViewId; label: string; ready: boolean }[] = [
   { id: 'run', label: 'Run', ready: true },
   { id: 'tradespace', label: 'Trade space', ready: true },
   { id: 'n2', label: 'N2', ready: false },
-  { id: 'sysml', label: 'SysML', ready: false },
+  { id: 'sysml', label: 'SysML', ready: true },
 ];
 
 interface AppState {

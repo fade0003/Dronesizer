@@ -26,9 +26,10 @@ Given/When/Then list maintained per CLAUDE.md rule 8. Checked = passing in
   Then the exact component list with costs appears in ≤ 2 clicks. *(phase 4
   — verified in browser: click point → drawer with input vector, metrics,
   per-component costs, "Open in Builder")*
-- [ ] **SysML parse** — Given the shipped example, When parsed, Then 0
+- [x] **SysML parse** — Given the shipped example, When parsed, Then 0
   errors; When a semicolon is deleted, Then an inline error at the correct
-  line. *(phase 5)*
+  line. *(phase 5 — parse.test.ts pins line 2; browser-verified: lint range
+  + gutter marker render at line 2 col 64 in the editor)*
 - [x] **Repository boundary** — Given `restStore.ts` implementing the `Db`
   interface, When `npm run build` type-checks, Then it compiles with no
   changes outside `src/db/`. Additionally, Given any module outside
@@ -124,3 +125,25 @@ Given/When/Then list maintained per CLAUDE.md rule 8. Checked = passing in
   603 unique hashes across 5 studies, zero status conflicts per hash).
 - [x] Given a completed study, When inspected, Then a paretoSet record is
   persisted with the front's case ids for the selected objectives.
+
+## Phase 5 — SysML v2 mini-modeler (passing / browser-verified)
+
+- [x] Given the SPEC §9 example, When parsed, Then the AST carries the part
+  defs (kv 240, mass 0.184), the vehicle composition (motors [4], pack,
+  frame), the connect, and the HoverEndurance requirement.
+- [x] Given attribute matching (kv ±5 %, mass ±10 %), When the example maps
+  to the catalog, Then motors → MN501-S KV240 ×4, pack → Li-ion 6S2P, and
+  Frame650 becomes a flagged ad-hoc frame.
+- [x] Given a `// @catalog:<id>` override, When mapped, Then it wins over
+  attribute matching; usage attribute redefinitions participate in
+  matching.
+- [x] Given requirement defs, When parsed, Then rows populate the
+  Requirements table bound to metric names (enduranceMin ≥ 30 min).
+- [x] Given any seeded configuration, When run through fromConfig → parse →
+  toConfig, Then the instance set deep-equals the original and a second
+  trip reproduces byte-identical text (canonical form).
+- [x] Given the editor (browser-verified), When the example loads, Then
+  keyword highlighting, the part tree, requirements, and mapping panels
+  render; "Apply to Builder" creates the configuration (ad-hoc parts
+  persisted in the same batch) and opens it; "Generate from Builder"
+  emits canonical text that parses with zero ad-hoc fallout.

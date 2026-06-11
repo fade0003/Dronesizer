@@ -123,7 +123,7 @@ export function BuilderView() {
 
   return (
     <div className="flex h-full flex-col gap-3">
-      <div className="flex min-h-0 flex-1 gap-3">
+      <div className="flex min-h-0 flex-1 flex-wrap gap-3 xl:flex-nowrap">
         {/* Palette */}
         <aside
           className="w-60 shrink-0 overflow-y-auto rounded border bg-panel p-2"
@@ -148,7 +148,10 @@ export function BuilderView() {
           ))}
         </aside>
         {/* Canvas */}
-        <div className="min-h-80 flex-1 rounded border" style={{ borderColor: 'var(--line)', background: 'var(--panel)' }}>
+        <div
+          className="min-h-80 flex-1 rounded border"
+          style={{ borderColor: 'var(--line)', background: 'var(--panel)', minWidth: 320 }}
+        >
           <ReactFlow
             key={graphKey}
             defaultNodes={graph.nodes}
